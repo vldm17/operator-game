@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cegm5667ycvm0"]
+
+[ext_resource type="Script" uid="uid://danvvww7xepyk" path="res://Scripts/player.gd" id="1_y6xdh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y6xdh"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_y6xdh"]
+
+[node name="Player" type="Node3D" unique_id=1677933195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0414264, 0)
+script = ExtResource("1_y6xdh")
+
+[node name="Head" type="Node3D" parent="." unique_id=1065996208]
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=258510140]
+current = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1217619351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0.4)
+material_override = SubResource("StandardMaterial3D_y6xdh")
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_y6xdh")

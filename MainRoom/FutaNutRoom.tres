@@ -1,0 +1,22 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dvsxv0500lqbm"]
+
+[ext_resource type="Texture2D" uid="uid://de1ihxaak62lu" path="res://MainRoom/FutaNutRoomV2_FutaNutRoomV2_TextureAtlas.png" id="1_7wkjr"]
+
+[resource]
+blend_mode = 4
+cull_mode = 1
+depth_draw_mode = 1
+diffuse_mode = 1
+albedo_texture = ExtResource("1_7wkjr")
+metallic_specular = 0.16
+emission = Color(0.43529412, 0, 0, 1)
+emission_energy_multiplier = 0.01
+normal_scale = -0.58
+backlight = Color(0.99116415, 0.99116427, 0.99116415, 1)
+refraction_scale = 0.0
+detail_blend_mode = 3
+texture_filter = 0
+billboard_keep_scale = true
+stencil_flags = 2
+stencil_color = Color(1, 1, 1, 1)
+stencil_outline_thickness = 1.0

@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://cvryyrvltgbsd"]
+
+[ext_resource type="PackedScene" uid="uid://cegm5667ycvm0" path="res://Prefabs/player.tscn" id="1_7rqgy"]
+[ext_resource type="PackedScene" uid="uid://jex5v20rvi1j" path="res://MainRoom/FutaNutRoomV2.glb" id="2_qxria"]
+[ext_resource type="Material" uid="uid://dvsxv0500lqbm" path="res://MainRoom/FutaNutRoom.tres" id="3_y4jh7"]
+[ext_resource type="PackedScene" uid="uid://cd6ft5lqrir6i" path="res://Prefabs/ui.tscn" id="4_q68mp"]
+[ext_resource type="Texture2D" uid="uid://i0tm7hdl3d8e" path="res://hlish2.jpg" id="5_qxria"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rfqr7"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_rso68"]
+sky_material = SubResource("ProceduralSkyMaterial_rfqr7")
+
+[sub_resource type="Environment" id="Environment_7ph0s"]
+background_mode = 2
+sky = SubResource("Sky_rso68")
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y4jh7"]
+shading_mode = 0
+albedo_texture = ExtResource("5_qxria")
+uv1_scale = Vector3(1.015, 1.015, 1.015)
+
+[node name="Node3D" type="Node3D" unique_id=1780960221]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1125070506]
+environment = SubResource("Environment_7ph0s")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1808173488]
+transform = Transform3D(-0.32391748, 0.945911, 0.018162409, 0, 0.019197432, -0.9998157, -0.94608533, -0.32385778, -0.006218384, 0, 0, 0)
+light_energy = 0.0
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=1677933195 instance=ExtResource("1_7rqgy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.889062, 7.834153, -1.8704821)
+
+[node name="Room" type="Node3D" parent="." unique_id=2015731272]
+
+[node name="FutaNutRoomV2" parent="Room" unique_id=2142194789 instance=ExtResource("2_qxria")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 14.43489, 7.4190907, -0.46984386)
+
+[node name="Walls_002" parent="Room/FutaNutRoomV2" index="0" unique_id=1672602358]
+material_override = ExtResource("3_y4jh7")
+
+[node name="Floor" parent="Room/FutaNutRoomV2" index="1" unique_id=268477472]
+material_override = ExtResource("3_y4jh7")
+
+[node name="Ceiling" parent="Room/FutaNutRoomV2" index="2" unique_id=1534152789]
+material_override = ExtResource("3_y4jh7")
+
+[node name="Walls_001" parent="Room/FutaNutRoomV2" index="3" unique_id=1345009712]
+material_override = ExtResource("3_y4jh7")
+
+[node name="Walls_004" parent="Room/FutaNutRoomV2" index="4" unique_id=858083712]
+material_override = ExtResource("3_y4jh7")
+
+[node name="Walls_005" parent="Room/FutaNutRoomV2" index="5" unique_id=3855164]
+material_override = ExtResource("3_y4jh7")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Room" unique_id=1513795493]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.109826, 10.109039, -2.0857782)
+light_color = Color(0.924061, 0.61395955, 0.47397244, 1)
+light_energy = 0.2
+shadow_enabled = true
+omni_range = 5.43
+omni_attenuation = 0.815
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Room" unique_id=428804918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.75688, 6.752571, 1.7236655)
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.05
+
+[node name="UI" parent="." unique_id=1642674617 instance=ExtResource("4_q68mp")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=343209324]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 14.9114685, 7.6308107, 2.8069334)
+size = Vector3(3.3589478, 0.013867199, 2.661621)
+material = SubResource("StandardMaterial3D_y4jh7")
+
+[editable path="Room/FutaNutRoomV2"]
